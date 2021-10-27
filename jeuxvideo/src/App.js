@@ -27,9 +27,8 @@ function App() {
       {jv ? 
           jv.map(jv => {
               return(
-                 <div className="jv" key={jv._id.$oid.toString()}>
+                 <div className="jv" key={jv._id}>
                    <h3>{jv.name}</h3>
-                   <p>{jv.note}</p>
                  </div>
               )
           }) : <h3>No data yet</h3> }
