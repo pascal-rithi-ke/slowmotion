@@ -1,12 +1,9 @@
 import './App.css';
-import React,{useState} from 'react';
-import axios from "axios";
-import { useEffect } from 'react/cjs/react.development';
-
-
+import React, { useState } from 'react';
+import axios from 'axios';
+import {useEffect} from 'react/cjs/react.development';
 
 function App() {
-
   const apiURL = "http://localhost:5000/";
   const [jv,getJeuxVideo] = useState('');
   useEffect(() => {
@@ -27,13 +24,13 @@ function App() {
       {jv ? 
           jv.map(jv => {
               return(
-                 <div className="jv" key={jv._id}>
+                 <div className="jv" key={jv._id.$oid.toString()}>
                    <h3>{jv.name}</h3>
                  </div>
               )
           }) : <h3>No data yet</h3> }
       </>
-  );
+    );
 }
 
 export default App;
