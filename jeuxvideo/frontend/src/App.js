@@ -20,16 +20,29 @@ function App() {
   }
 
     return (
+      <div>
+        <header>
+          <h1>Slow Motion</h1>
+        </header>
       <>
+      <div className="contenu">
       {jv ? 
           jv.map(jv => {
-              return(
-                 <div className="jv" key={jv._id.$oid.toString()}>
+              return( 
+
+                <div className="jv" key={jv.id}>
+                  <img className="jeux_img" src={jv.img} alt={jv.name}></img>
                    <h3>{jv.name}</h3>
-                 </div>
+                   <p className="jeux_genres">{jv.genres}</p>
+                   <p>{jv.note}</p>
+                   <button className="square">Info</button>
+                </div>
+
               )
           }) : <h3>No data yet</h3> }
+      </div>
       </>
+      </div>
     );
 }
 
